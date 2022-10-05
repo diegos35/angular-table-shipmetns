@@ -43,8 +43,18 @@
   <tbody>
     <tr #tr *ngFor="let element of paginateData">
       <ng-container *ngFor="let cell of columns">
-        <ng-container>
+        <ng-container *ngIf="element[cell.field] !== 'ship'">
           <td>{{ element[cell.field] }}</td>
+          <!-- <td>{{ element.shipmentId }}</td>
+      <td>{{ element.referenceName }}</td>
+      <td>{{ element.tags }}</td>
+      <td>{{ element.freightType }}</td>
+      <td>{{ element.etd | date:shortDate}} </td>
+      <td>{{ element.eta }}</td>
+      <td>{{ element.notes }}</td> -->
+        </ng-container>
+        <ng-container *ngIf="element[cell.field] === 'ship'">
+          <h1>s</h1>
         </ng-container>
       </ng-container>
       <div
